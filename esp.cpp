@@ -9,9 +9,6 @@ bool CESP::WorldToScreen( const Vector& in, Vector& out )
 
 void CESP::Draw( )
 {
-	int screenwidth, screenheight;
-	engine->GetScreenSize( screenwidth, screenheight );
-
 	for( int i = 0; i <= engine->GetMaxClients( ); i++ )
 	{
 		auto entity = entitylist->GetClientEntity( i );

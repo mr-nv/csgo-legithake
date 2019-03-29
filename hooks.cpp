@@ -25,7 +25,7 @@ bool __fastcall hkdCreateMove( void* ecx, void* edx, float input, CUserCmd * cmd
 	me = entitylist->GetClientEntity( engine->GetLocalPlayer( ) );
 	if( !me || !_cmd || ( _cmd != cmd ) ) return o;
 
-	if( vars->bunnyhop )
+	if( vars->bunnyhop && me->GetMoveType( ) != MOVETYPE_LADDER )
 	{
 		if( chk( cmd->buttons, IN_JUMP ) && !chk( me->GetFlags( ), FL_ONGROUND ) )
 			del( cmd->buttons, IN_JUMP );

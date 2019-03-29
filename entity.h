@@ -176,6 +176,13 @@ public:
 		return *( int* )( ( DWORD )this + offset );
 	}
 
+	MoveType_t GetMoveType( )
+	{
+		static auto offset = 0x25C;
+
+		return *( MoveType_t* )( ( DWORD )this + offset );
+	}
+
 	bool SetupBones( matrix3x4_t * bone, int max, int mask, float curtime )
 	{
 		auto renderable = ( void* )( ( DWORD )this + 0x4 );
