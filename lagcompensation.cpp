@@ -62,7 +62,7 @@ void CLagCompensation::FrameStageNotify( ClientFrameStage_t stage )
 {
 	if( stage == FRAME_NET_UPDATE_END )
 	{
-		for( int i = 0; i < engine->GetMaxClients( ); i++ )
+		for( int i = 1; i <= engine->GetMaxClients( ); i++ )
 		{
 			auto entity = ( CBasePlayer* )entitylist->GetClientEntity( i );
 			if( !entity || entity == me || !entity->IsPlayer( ) || !entity->IsAlive( ) || entity->IsDormant( ) )
@@ -136,7 +136,7 @@ void CLagCompensation::Start( )
 
 	static auto mp_teammates_are_enemies = cvar->FindVar( "mp_teammates_are_enemies" );
 
-	for( int i = 0; i < engine->GetMaxClients( ); i++ )
+	for( int i = 1; i <= engine->GetMaxClients( ); i++ )
 	{
 		auto entity = ( CBasePlayer* )entitylist->GetClientEntity( i );
 
@@ -203,7 +203,7 @@ void CLagCompensation::Draw( )
 
 	static auto mp_teammates_are_enemies = cvar->FindVar( "mp_teammates_are_enemies" );
 
-	for( int i = 0; i < engine->GetMaxClients( ); i++ )
+	for( int i = 1; i <= engine->GetMaxClients( ); i++ )
 	{
 		auto entity = ( CBasePlayer* )entitylist->GetClientEntity( i );
 		if( !entity || entity == me || !entity->IsPlayer( ) || !entity->IsAlive( ) || entity->IsDormant( ) ) continue;
